@@ -160,6 +160,48 @@
 
   .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0 4rem; position: relative; z-index: 2; }
 
+  /* ── Scroll To Top Button ── */
+  #scrollTopBtn {
+    position: fixed;
+    bottom: 5.5rem;
+    right: 2.5rem;
+    z-index: 200;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--grad-main);
+    background-size: 200% auto;
+    border: none;
+    cursor: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 24px rgba(183,33,255,0.4), 0 4px 20px rgba(0,0,0,0.4);
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    transition: opacity 0.35s ease, transform 0.35s ease, background-position 0.4s, box-shadow 0.3s;
+    pointer-events: none;
+  }
+  #scrollTopBtn.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: all;
+  }
+  #scrollTopBtn:hover {
+    background-position: right center;
+    box-shadow: 0 0 40px rgba(33,212,253,0.5), 0 6px 28px rgba(0,0,0,0.5);
+    transform: translateY(-4px) scale(1.08);
+  }
+  #scrollTopBtn svg {
+    width: 20px;
+    height: 20px;
+    stroke: #fff;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+  }
+
   @media(max-width:768px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
@@ -167,6 +209,7 @@
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
     .divider { margin: 0 1.5rem; }
+    #scrollTopBtn { bottom: 4.5rem; right: 1.5rem; width: 46px; height: 46px; }
   }
 </style>
 </head>
@@ -179,6 +222,11 @@
 <div class="blob blob-1"></div>
 <div class="blob blob-2"></div>
 <div class="blob blob-3"></div>
+
+<!-- Scroll To Top Button -->
+<button id="scrollTopBtn" aria-label="Scroll to top" title="Back to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
 
 <nav>
   <div class="nav-logo">Akashh | AI Dev</div>
@@ -463,6 +511,7 @@
 </footer>
 
 <script>
+  // ── Custom Cursor ──
   const cursor = document.getElementById('cursor');
   const ring = document.getElementById('cursorRing');
   let mx = 0, my = 0, rx = 0, ry = 0;
@@ -490,6 +539,7 @@
     });
   });
 
+  // ── Scroll Reveal ──
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -504,6 +554,21 @@
     el.style.transform = 'translateY(30px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     observer.observe(el);
+  });
+
+  // ── Scroll To Top Button ──
+  const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      scrollTopBtn.classList.add('visible');
+    } else {
+      scrollTopBtn.classList.remove('visible');
+    }
+  });
+
+  scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 </script>
 </body>
