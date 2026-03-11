@@ -104,6 +104,7 @@
   .card-4 .project-glow { background: radial-gradient(circle at 50% 0%, rgba(23,234,217,0.12), transparent 70%); }
   .card-5 .project-glow { background: radial-gradient(circle at 50% 0%, rgba(255,210,0,0.1), transparent 70%); }
   .card-6 .project-glow { background: radial-gradient(circle at 50% 0%, rgba(255,107,107,0.1), transparent 70%); }
+  .card-7 .project-glow { background: radial-gradient(circle at 50% 0%, rgba(247,151,30,0.12), transparent 70%); }
 
   .project-header { padding: 1.5rem 1.5rem 0; display: flex; align-items: flex-start; justify-content: space-between; gap: 0.75rem; }
   .project-header .project-icon { flex-shrink: 0; }
@@ -114,6 +115,7 @@
   .icon-4 { background: linear-gradient(135deg, rgba(23,234,217,0.2), rgba(33,212,253,0.2)); }
   .icon-5 { background: linear-gradient(135deg, rgba(255,210,0,0.2), rgba(247,151,30,0.2)); }
   .icon-6 { background: linear-gradient(135deg, rgba(255,107,107,0.2), rgba(183,33,255,0.2)); }
+  .icon-7 { background: linear-gradient(135deg, rgba(247,151,30,0.2), rgba(255,210,0,0.2)); }
 
   .project-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; justify-content: flex-end; max-width: calc(100% - 60px); }
   .tag { padding: 0.18rem 0.5rem; border-radius: 100px; font-size: 0.65rem; font-family: 'DM Mono', monospace; font-weight: 500; border: 1px solid; white-space: nowrap; }
@@ -123,6 +125,7 @@
   .tag-teal   { color: var(--c6); border-color: rgba(23,234,217,0.3); background: rgba(23,234,217,0.08); }
   .tag-yellow { color: var(--c3); border-color: rgba(255,210,0,0.3);  background: rgba(255,210,0,0.08); }
   .tag-green  { color: #4ade80; border-color: rgba(74,222,128,0.3); background: rgba(74,222,128,0.08); }
+  .tag-orange { color: var(--c2); border-color: rgba(247,151,30,0.3); background: rgba(247,151,30,0.08); }
 
   .project-body { padding: 1.2rem 1.5rem; flex: 1; }
   .project-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.6rem; }
@@ -286,6 +289,8 @@
     <div class="skill-card"><span class="skill-icon">🗃️</span><div class="skill-name">Vector Databases</div><div class="skill-level">Intermediate</div><div class="skill-bar"><div class="skill-fill" style="width:68%"></div></div></div>
     <div class="skill-card"><span class="skill-icon">🤗</span><div class="skill-name">Hugging Face</div><div class="skill-level">Intermediate</div><div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div></div>
     <div class="skill-card"><span class="skill-icon">💬</span><div class="skill-name">Prompt Engineering</div><div class="skill-level">Advanced</div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+    <!-- NEW: Supabase -->
+    <div class="skill-card"><span class="skill-icon">⚡</span><div class="skill-name">Supabase</div><div class="skill-level">Intermediate</div><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
   </div>
 </section>
 
@@ -460,6 +465,34 @@
       </div>
     </div>
 
+    <!-- Project 7 — D2C ERP Order Processing Automation -->
+    <div class="project-card card-7">
+      <div class="project-glow"></div>
+      <div class="project-header">
+        <div class="project-icon icon-7">🛍️</div>
+        <div class="project-tags">
+          <span class="tag tag-orange">n8n</span>
+          <span class="tag tag-teal">PostgreSQL</span>
+          <span class="tag tag-cyan">Postman</span>
+          <span class="tag tag-red">REST API</span>
+        </div>
+      </div>
+      <div class="project-body">
+        <div class="project-title">D2C ERP Order Processing</div>
+        <div class="project-desc">A full D2C ERP backend automation that processes orders via webhook API, validates inventory, manages customers, and returns real-time success/failure responses — end-to-end, no human needed.</div>
+        <ul class="project-features">
+          <li>Webhook API → inventory check → decision engine</li>
+          <li>Customer upsert logic (no duplicate records)</li>
+          <li>Auto stock deduction after order creation</li>
+          <li>Structured JSON responses for success & out-of-stock</li>
+        </ul>
+      </div>
+      <div class="project-footer">
+        <a href="#" class="proj-btn proj-btn-fill">Live Demo</a>
+        <a href="#" class="proj-btn proj-btn-outline">GitHub</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -478,7 +511,7 @@
       </div>
     </div>
     <div class="stats-grid">
-      <div class="stat-card"><div class="stat-num">6+</div><div class="stat-label">AI Projects Deployed</div></div>
+      <div class="stat-card"><div class="stat-num">7+</div><div class="stat-label">AI Projects Deployed</div></div>
       <div class="stat-card"><div class="stat-num">10+</div><div class="stat-label">Tech Skills</div></div>
       <div class="stat-card"><div class="stat-num">100%</div><div class="stat-label">Free Stack Used</div></div>
       <div class="stat-card"><div class="stat-num">2-3</div><div class="stat-label">Years Experience</div></div>
